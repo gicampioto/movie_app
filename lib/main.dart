@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/main_frame/presentation/view/main_frame_view.dart';
 
-void main() {
+import 'core/utils/inject.dart';
+
+void main() async {
+  await Inject.init();
+
   runApp(const MyApp());
 }
 
