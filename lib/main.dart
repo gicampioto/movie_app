@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/main_frame/presentation/view/main_frame_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,9 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Movie App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.pink,
       ),
-      home: Container(),
+      home: const MainFrameView(),
     );
   }
 }
