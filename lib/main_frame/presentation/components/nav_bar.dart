@@ -14,7 +14,7 @@ class NavBar extends StatelessWidget {
 
     return Container(
       color: Colors.pink,
-      height: AppSizes.barSizes,
+      height: AppSizes.bars,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: AppSizes.padding),
         child: BlocBuilder<MainFrameBloc, MainFrameState>(

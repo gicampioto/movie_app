@@ -3,24 +3,29 @@ import 'package:movie_app/design_system/utils/sizes.dart';
 
 import '../../../design_system/widgets/icon_btn.dart';
 
-AppBar appBar() {
+AppBar appBar({String? textTitle}) {
   const padding = SizedBox(width: AppSizes.padding);
 
-  const Widget title = Center(
+  Widget title = Center(
     child: Text(
-      'Movie App',
-      style: TextStyle(fontSize: 24),
+      textTitle ?? 'Filminhos',
+      style: const TextStyle(fontSize: FontSizes.barTitle),
     ),
   );
 
-  Widget themeBtn = IconBtn(
-    tap: () {},
+  const Widget themeBtn = IconBtn(
     icon: Icons.sunny,
   );
 
+  const Widget logo = IconBtn(
+    icon: Icons.videocam,
+  );
+
   return AppBar(
-    toolbarHeight: AppSizes.barSizes,
+    toolbarHeight: AppSizes.bars,
     actions: [
+      padding,
+      logo,
       padding,
       title,
       const Spacer(),

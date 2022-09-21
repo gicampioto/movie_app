@@ -4,13 +4,13 @@ import 'package:movie_app/design_system/utils/sizes.dart';
 class IconBtn extends StatelessWidget {
   const IconBtn({
     super.key,
-    required this.tap,
+    this.tap,
     required this.icon,
     this.bgColor = Colors.transparent,
     this.iconColor = Colors.white,
   });
 
-  final Function() tap;
+  final Function()? tap;
   final IconData icon;
   final Color bgColor;
   final Color iconColor;
