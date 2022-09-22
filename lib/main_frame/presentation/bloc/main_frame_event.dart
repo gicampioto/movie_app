@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:movie_app/core/domain/entity/movie_entity.dart';
 
 abstract class MainFrameEvent extends Equatable {}
 
@@ -18,6 +19,10 @@ class MFTapFavoriteEvent extends MainFrameEvent {
 }
 
 class MFTapMovieEvent extends MainFrameEvent {
+  MFTapMovieEvent(this.movie);
+
+  final MovieEntity movie;
+
   @override
   List<Object?> get props => [];
 }

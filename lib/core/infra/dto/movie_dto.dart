@@ -13,11 +13,11 @@ extension MovieDto on MovieEntity {
     return MovieEntity(
       id: json['id'],
       title: json['title'],
-      overview: json['overview'],
+      overview: json['overview'] ?? 'Não possui sinopse em português.',
       releaseDate: json['release_date'] != null
           ? DateTime.parse(json['release_date'])
           : null,
-      rate: json['vote_average'],
+      rate: json['vote_average']?.toDouble(),
       genreIDs: genreIDs,
       imagePath: json['poster_path'],
       videoPath: json['key'],

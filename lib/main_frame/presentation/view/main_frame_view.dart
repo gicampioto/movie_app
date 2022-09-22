@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:movie_app/design_system/utils/style.dart';
 import 'package:movie_app/features/home/presentation/view/home_view.dart';
+import 'package:movie_app/features/movie/presentation/view/movie_view.dart';
 
 import 'package:movie_app/main_frame/presentation/components/app_bar.dart';
 import 'package:movie_app/main_frame/presentation/components/nav_bar.dart';
@@ -61,10 +63,7 @@ class _MainFrameViewState extends State<MainFrameView> {
             }
 
             if (state is MFMovieViewState) {
-              return Container(
-                color: Colors.amber,
-                child: const Center(child: Text('movie')),
-              );
+              return MovieView(movie: state.movie);
             }
 
             return Container(

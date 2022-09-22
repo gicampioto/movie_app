@@ -1,5 +1,5 @@
 class MovieEntity {
-  int id;
+  int? id;
   String? title;
   String? overview;
   double? rate;

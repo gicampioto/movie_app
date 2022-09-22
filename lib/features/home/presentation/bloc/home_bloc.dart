@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../domain/entity/page_entity.dart';
+import '../../../../core/domain/entity/page_entity.dart';
+import '../../../../core/errors/app_base_error.dart';
 import '../../domain/use_case/get_movies_by_genre_use_case.dart';
 import 'home_event.dart';
 import 'home_state.dart';
@@ -22,8 +23,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
           totalPages: page.totalPages,
           movies: page.movies,
         ));
-      } catch (_) {
-        emit(HomeErrorState('Error'));
+      } catch (e) {
+        if (e is AppBaseError) {
+          emit(HomeErrorState(e.message));
+        } else {
+          emit(HomeErrorState('Erro desconhecido'));
+        }
       }
     });
   }

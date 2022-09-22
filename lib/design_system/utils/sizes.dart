@@ -12,6 +12,6 @@ class BtnSizes {
 
 class FontSizes {
   static const double barTitle = 22;
-  static const double title = 18;
-  static const double text = 16;
+  static const double title = 14;
+  static const double text = 13;
 }

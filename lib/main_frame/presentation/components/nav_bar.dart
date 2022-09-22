@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movie_app/design_system/utils/style.dart';
 
 import '../../../design_system/utils/sizes.dart';
 import '../widgets/nav_bar_btn.dart';
@@ -13,7 +14,7 @@ class NavBar extends StatelessWidget {
     final bloc = context.read<MainFrameBloc>();
 
     return Container(
-      color: Colors.pink,
+      color: AppColors.pink,
       height: AppSizes.bars,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: AppSizes.padding),

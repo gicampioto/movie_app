@@ -25,7 +25,7 @@ class MainFrameBloc extends Bloc<MainFrameEvent, MainFrameState> {
     });
 
     on<MFTapMovieEvent>((event, emit) {
-      emit(MFMovieViewState());
+      emit(MFMovieViewState(event.movie));
     });
   }
 }

@@ -1,4 +1,4 @@
-import '../../../../core/domain/entity/movie_entity.dart';
+import 'movie_entity.dart';
 
 class PageEntity {
   String currentPage;

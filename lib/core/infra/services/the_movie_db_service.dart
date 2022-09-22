@@ -10,9 +10,9 @@ final $MovieService = GetIt.I.registerLazySingleton<AppDio>(
 
 class TheMovieDBService extends AppDio {
   final Dio _dio = Dio()..options.baseUrl = ApiPath().baseURL;
-  // ..options.sendTimeout = 20000
-  // ..options.receiveTimeout = 20000
-  // ..options.connectTimeout = 20000;
+  // ..options.sendTimeout = 2000
+  // ..options.receiveTimeout = 2000
+  // ..options.connectTimeout = 2000;
 
   @override
   Future<Response> get(String path, [Options? options]) async {

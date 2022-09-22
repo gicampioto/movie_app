@@ -1,11 +1,9 @@
-import 'dart:developer';
-
 import 'package:get_it/get_it.dart';
-import 'package:movie_app/core/domain/entity/movie_entity.dart';
-import 'package:movie_app/core/domain/services/app_dio.dart';
-import 'package:movie_app/core/utils/api_paths.dart';
-import 'package:movie_app/features/home/domain/entity/page_entity.dart';
 
+import '../../../core/domain/entity/movie_entity.dart';
+import '../../../core/domain/services/app_dio.dart';
+import '../../../core/utils/api_paths.dart';
+import '../../../core/domain/entity/page_entity.dart';
 import '../../../core/infra/dto/movie_dto.dart';
 import '../../../core/infra/services/the_movie_db_service.dart';
 import '../infra/data_source/home_data_source.dart';

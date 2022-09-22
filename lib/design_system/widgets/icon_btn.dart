@@ -8,20 +8,22 @@ class IconBtn extends StatelessWidget {
     required this.icon,
     this.bgColor = Colors.transparent,
     this.iconColor = Colors.white,
+    this.size,
   });
 
   final Function()? tap;
   final IconData icon;
   final Color bgColor;
   final Color iconColor;
+  final double? size;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: tap,
       child: Container(
-        width: BtnSizes.icon,
-        height: BtnSizes.icon,
+        width: size ?? BtnSizes.icon,
+        height: size ?? BtnSizes.icon,
         clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
