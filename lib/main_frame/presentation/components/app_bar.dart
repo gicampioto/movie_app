@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/design_system/utils/sizes.dart';
+import 'package:movie_app/design_system/utils/style.dart';
 
 import '../../../design_system/widgets/icon_btn.dart';
 
@@ -9,7 +10,7 @@ AppBar appBar({String? textTitle}) {
   Widget title = Center(
     child: Text(
       textTitle ?? 'Filminhos',
-      style: const TextStyle(fontSize: FontSizes.barTitle),
+      style: TextStyles.barTitle,
     ),
   );
 
@@ -22,6 +23,7 @@ AppBar appBar({String? textTitle}) {
   );
 
   return AppBar(
+    elevation: 0,
     toolbarHeight: AppSizes.bars,
     actions: [
       padding,

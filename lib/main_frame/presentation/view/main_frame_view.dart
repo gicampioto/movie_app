@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:movie_app/features/home/presentation/view/home_view.dart';
 
 import 'package:movie_app/main_frame/presentation/components/app_bar.dart';
 import 'package:movie_app/main_frame/presentation/components/nav_bar.dart';
@@ -42,10 +43,7 @@ class _MainFrameViewState extends State<MainFrameView> {
           bloc: bloc,
           builder: (context, state) {
             if (state is MFHomeViewState) {
-              return Container(
-                color: Colors.amber,
-                child: const Center(child: Text('home')),
-              );
+              return const HomeView();
             }
 
             if (state is MFFavoriteViewState) {
