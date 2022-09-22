@@ -20,7 +20,7 @@ class HomeDataSourceImp extends HomeDataSource {
   final AppDio service;
 
   @override
-  Future<PageEntity> get(String genre, String page) async {
+  Future<PageEntity> call(String genre, String page) async {
     final respose = await service.get(ApiPath().getByGenre(genre, page));
 
     var jsonData = respose.data;

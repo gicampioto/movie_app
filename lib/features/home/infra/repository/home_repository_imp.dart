@@ -1,7 +1,13 @@
+import 'package:get_it/get_it.dart';
+import 'package:movie_app/core/utils/error_handler.dart';
 import 'package:movie_app/features/home/domain/entity/page_entity.dart';
 
 import '../../domain/repository/home_repository.dart';
 import '../data_source/home_data_source.dart';
+
+final $HomeRepositoryImp = GetIt.I.registerLazySingleton<HomeRepository>(
+  () => HomeRepositoryImp(GetIt.I()),
+);
 
 class HomeRepositoryImp extends HomeRepository {
   HomeRepositoryImp(this.dataSource);
@@ -10,9 +16,9 @@ class HomeRepositoryImp extends HomeRepository {
   @override
   Future<PageEntity> call(String genre, String page) async {
     try {
-      return await dataSource.get(genre, page);
-    } catch (e) {
-      throw Exception();
+      return await dataSource(genre, page);
+    } catch (e, stackTrace) {
+      throw ErrorHandler.handleErrors(e, stackTrace);
     }
   }
 }

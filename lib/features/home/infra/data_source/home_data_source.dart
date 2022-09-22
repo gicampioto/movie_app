@@ -1,5 +1,5 @@
 import '../../domain/entity/page_entity.dart';
 
 abstract class HomeDataSource {
-  Future<PageEntity> get(String genre, String page);
+  Future<PageEntity> call(String genre, String page);
 }
