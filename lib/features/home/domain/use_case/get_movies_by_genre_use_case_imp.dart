@@ -14,7 +14,7 @@ class GetMoviesByGenreImp extends GetMoviesByGenre {
   final HomeRepository repository;
 
   @override
-  Future<PageEntity> call(String genre, int page) {
-    return repository(genre, page.toString());
+  Future<PageEntity> call(String genre, int page) async {
+    return await repository(genre, page.toString());
   }
 }

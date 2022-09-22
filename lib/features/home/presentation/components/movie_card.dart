@@ -3,20 +3,35 @@ import 'package:movie_app/design_system/utils/sizes.dart';
 import 'package:movie_app/design_system/utils/style.dart';
 
 class HomeMovieCard extends StatelessWidget {
-  const HomeMovieCard({Key? key}) : super(key: key);
+  const HomeMovieCard({
+    Key? key,
+    required this.title,
+    required this.overview,
+    required this.imagePath,
+  }) : super(key: key);
+
+  final String? title;
+  final String overview;
+  final String? imagePath;
 
   @override
   Widget build(BuildContext context) {
-    var image = Image.network(
-      'https://picsum.photos/250?image=9',
-    );
+    Widget? poster;
 
-    const gap = SizedBox(width: AppSizes.padding);
+    if (imagePath != null) {
+      poster = Image.network(
+        'https://image.tmdb.org/t/p/original/$imagePath',
+      );
+    }
+
+    const pad = AppSizes.halfPadding;
+    const gapRow = SizedBox(width: AppSizes.padding);
+    const gapColumn = SizedBox(height: AppSizes.halfPadding);
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: AppSizes.halfPadding),
+      padding: const EdgeInsets.symmetric(vertical: pad, horizontal: pad),
       child: Container(
-        padding: const EdgeInsets.all(AppSizes.halfPadding),
+        padding: const EdgeInsets.all(pad),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           // border: Border.all(
@@ -29,17 +44,18 @@ class HomeMovieCard extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            image,
-            gap,
+            if (poster != null) poster,
+            gapRow,
             Flexible(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text('title', style: TextStyles.title),
-                  gap,
+                children: [
+                  Text(title ?? 'title', style: TextStyles.title),
+                  gapColumn,
                   Text(
-                    teste + teste + teste + teste,
+                    overview.isNotEmpty
+                        ? overview
+                        : 'Não possui sinopse em português.',
                     overflow: TextOverflow.ellipsis,
                     maxLines: 7,
                     softWrap: true,
@@ -54,6 +70,3 @@ class HomeMovieCard extends StatelessWidget {
     );
   }
 }
-
-const String teste =
-    'overview overview overview overview overview overview overview overview overview overview overview';
