@@ -11,7 +11,7 @@ Esse projeto contêm 4 telas.
 - Movie: Onde tem um maior detalhamento de cada filme.
 - Favorite: Tela em processo de criação. (Ainda não concluida)
 
-# API
+### API
 
 Foi usada a API the movie db. 
 
