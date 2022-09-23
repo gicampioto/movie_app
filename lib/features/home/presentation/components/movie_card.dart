@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/core/domain/entity/movie_entity.dart';
-import 'package:movie_app/design_system/utils/sizes.dart';
-import 'package:movie_app/design_system/utils/style.dart';
-import 'package:movie_app/design_system/widgets/icon_btn.dart';
 
+import '../../../../core/domain/entity/movie_entity.dart';
+import '../../../../design_system/utils/sizes.dart';
+import '../../../../design_system/utils/style.dart';
 import '../../../../main_frame/presentation/bloc/main_frame_bloc.dart';
 
 class HomeMovieCard extends StatelessWidget {
@@ -50,7 +49,7 @@ class HomeMovieCard extends StatelessWidget {
               const Spacer(),
               Text(
                 movie.title != null ? movie.title! : '',
-                style: TextStyles.title,
+                style: TextStyles.titleCard,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,

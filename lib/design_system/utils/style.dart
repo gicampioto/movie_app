@@ -4,13 +4,23 @@ import 'package:movie_app/design_system/utils/sizes.dart';
 class TextStyles {
   static const Color textColor = Colors.white;
 
-  static const TextStyle simple = TextStyle(
+  static const TextStyle tini = TextStyle(
+    fontSize: FontSizes.tini,
+    color: AppColors.blue,
+  );
+
+  static const TextStyle text = TextStyle(
     fontSize: FontSizes.text,
     color: textColor,
   );
 
   static const TextStyle title = TextStyle(
     fontSize: FontSizes.title,
+    color: textColor,
+  );
+
+  static const TextStyle titleCard = TextStyle(
+    fontSize: FontSizes.titleCard,
     color: textColor,
   );
 

@@ -23,7 +23,6 @@ AppBar appBar({String? textTitle}) {
   );
 
   return AppBar(
-    elevation: 0,
     toolbarHeight: AppSizes.bars,
     backgroundColor: AppColors.pink,
     actions: [

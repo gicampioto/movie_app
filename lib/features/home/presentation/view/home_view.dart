@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
-import 'package:movie_app/design_system/utils/style.dart';
 
 import '../../../../core/domain/entity/movie_entity.dart';
 import '../../../../design_system/utils/sizes.dart';
