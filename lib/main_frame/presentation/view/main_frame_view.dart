@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:movie_app/features/popular/presentation/view/popular_view.dart';
 
 import '../../../features/home/presentation/view/home_view.dart';
 import '../../../features/movie/presentation/view/movie_view.dart';
@@ -37,7 +38,7 @@ class _MainFrameViewState extends State<MainFrameView> {
     return BlocProvider<MainFrameBloc>.value(
       value: bloc,
       child: Scaffold(
-        appBar: appBar(),
+        appBar: appBar(bloc),
         bottomNavigationBar: const NavBar(),
         body: BlocBuilder<MainFrameBloc, MainFrameState>(
           bloc: bloc,
@@ -54,10 +55,7 @@ class _MainFrameViewState extends State<MainFrameView> {
             }
 
             if (state is MFPopularViewState) {
-              return Container(
-                color: Colors.amber,
-                child: const Center(child: Text('popular')),
-              );
+              return const PopularView();
             }
 
             if (state is MFMovieViewState) {

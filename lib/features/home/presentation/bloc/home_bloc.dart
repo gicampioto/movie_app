@@ -16,12 +16,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       emit(HomeLoadingState());
 
       try {
-        PageEntity page = await getMoviesByGenre('action', 1);
+        PageEntity page = await getMoviesByGenre(event.genre, 1);
 
         emit(HomeDataFetchedState(
           currentPage: page.currentPage,
           totalPages: page.totalPages,
           movies: page.movies,
+          genre: event.genre,
         ));
       } catch (e) {
         if (e is AppBaseError) {

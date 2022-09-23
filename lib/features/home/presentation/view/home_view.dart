@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
+import '../../../../design_system/components/movie_grid.dart';
 import '../../../../core/domain/entity/movie_entity.dart';
-import '../../../../design_system/utils/sizes.dart';
 import '../bloc/home_bloc.dart';
 import '../components/movie_card.dart';
-import '../widgets/pill_header.dart';
+import '../components/header.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -43,32 +43,15 @@ class _HomeViewState extends State<HomeView> {
             bloc: bloc,
             builder: (context, state) {
               if (state is HomeInitialState) {
-                bloc.add(HomeRequestMovies());
+                bloc.add(HomeRequestMovies('Família'));
               }
 
               if (state is HomeDataFetchedState) {
                 return Stack(
                   children: [
-                    const SizedBox(height: 20),
-                    //TODO: melhorar o tamanho dos containers
-                    LayoutBuilder(builder: (context, constraints) {
-                      var cardWidth =
-                          (constraints.maxWidth - AppSizes.padding) / 3;
-
-                      return GridView.count(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: AppSizes.padding,
-                          horizontal: AppSizes.padding,
-                        ),
-                        crossAxisCount: 3,
-                        crossAxisSpacing: AppSizes.halfPadding,
-                        mainAxisSpacing: AppSizes.padding,
-                        childAspectRatio: 1 / 1.8,
-                        children: _gridCards(state.movies, cardWidth),
-                      );
-                    }),
+                    MovieGrid.home(children: _gridCards(state.movies)),
                     //TODO: colocar o contador de paginas
-                    PillHeader(constraints),
+                    HomeHeader(constraints, genre: state.genre),
                   ],
                 );
               }
@@ -98,11 +81,11 @@ class _HomeViewState extends State<HomeView> {
   }
 }
 
-List<Widget> _gridCards(List<MovieEntity> movies, double cardWidth) {
+List<Widget> _gridCards(List<MovieEntity> movies) {
   List<Widget> moviesList = [];
 
   for (var movie in movies) {
-    moviesList.add(HomeMovieCard(movie: movie, width: cardWidth));
+    moviesList.add(HomeMovieCard(movie: movie));
   }
 
   return moviesList;

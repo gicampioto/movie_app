@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movie_app/design_system/components/genres_container.dart';
 
 import '../../../../core/domain/entity/movie_entity.dart';
 import '../../../../design_system/utils/sizes.dart';
 import '../../../../design_system/utils/style.dart';
 import '../../../../main_frame/presentation/bloc/main_frame_bloc.dart';
+import '../../../movie/presentation/widgets/rate_bar.dart';
 
-class HomeMovieCard extends StatelessWidget {
-  const HomeMovieCard({
+class PopMovieCard extends StatelessWidget {
+  const PopMovieCard({
     Key? key,
     required this.movie,
   }) : super(key: key);
@@ -40,10 +42,9 @@ class HomeMovieCard extends StatelessWidget {
             color: AppColors.lightPink,
           ),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               if (poster != null) poster,
-              const Spacer(),
               Text(
                 movie.title != null ? movie.title! : '',
                 style: TextStyles.titleCard,
@@ -51,7 +52,8 @@ class HomeMovieCard extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
               ),
-              const Spacer(),
+              Center(child: GenresContainer(movie.genreIDs, middle: true)),
+              RateBar(movie.rate ?? 0),
             ],
           ),
         ),

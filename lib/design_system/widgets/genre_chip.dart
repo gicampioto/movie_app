@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../design_system/utils/style.dart';
+import '../utils/style.dart';
 
 class GenreChip extends StatelessWidget {
   const GenreChip(this.genre, {Key? key}) : super(key: key);
@@ -10,7 +10,7 @@ class GenreChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 3.5, horizontal: 7),
+      padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 6),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(50),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/design_system/utils/sizes.dart';
-import 'package:movie_app/features/movie/presentation/components/genres_container.dart';
+import 'package:movie_app/design_system/components/genres_container.dart';
 import 'package:movie_app/features/movie/presentation/widgets/rate_bar.dart';
 
 import '../../../../core/domain/entity/movie_entity.dart';
@@ -44,7 +44,7 @@ class Summary extends StatelessWidget {
                 Text(movie.title ?? 'Titulo', style: TextStyles.title),
                 Text(ano, style: TextStyles.text),
                 RateBar(movie.rate ?? 0),
-                GenresContainer(movie.genreIDs),
+                GenresContainer(movie.genreIDs, amount: 3),
               ],
             ),
           )

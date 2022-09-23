@@ -1,3 +1,6 @@
+import '../../features/popular/domain/use_case/get_popular_movies_use_case_imp.dart';
+import '../../features/popular/external/popular_data_source_imp.dart';
+import '../../features/popular/infra/repository/popular_repository_imp.dart';
 import '../../features/home/domain/use_case/get_movies_by_genre_use_case_imp.dart';
 import '../../features/home/infra/repository/home_repository_imp.dart';
 import '../infra/services/the_movie_db_service.dart';
@@ -20,5 +23,13 @@ class Inject {
     $HomeRepositoryImp;
     //usecase
     $GetMoviesByGenreImp;
+
+    //POPULAR
+    //datasource
+    $PopularDataSourceImp;
+    //repository
+    $PopularRepositoryImp;
+    //usecase
+    $GetPopularMoviesImp;
   }
 }

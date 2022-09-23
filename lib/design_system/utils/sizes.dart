@@ -15,5 +15,5 @@ class FontSizes {
   static const double title = 18;
   static const double titleCard = 14;
   static const double text = 16;
-  static const double tini = 11;
+  static const double tini = 10;
 }

@@ -1,7 +1,7 @@
 import 'package:get_it/get_it.dart';
-import 'package:movie_app/core/utils/error_handler.dart';
-import 'package:movie_app/core/domain/entity/page_entity.dart';
 
+import '../../../../core/utils/error_handler.dart';
+import '../../../../core/domain/entity/page_entity.dart';
 import '../../domain/repository/home_repository.dart';
 import '../data_source/home_data_source.dart';
 

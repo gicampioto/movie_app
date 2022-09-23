@@ -28,12 +28,19 @@ class HomeDataFetchedState extends HomeState {
     required this.currentPage,
     required this.totalPages,
     required this.movies,
+    required this.genre,
   });
 
   final String currentPage;
   final int totalPages;
   final List<MovieEntity> movies;
+  final String genre;
 
   @override
-  List<Object?> get props => [currentPage, totalPages, movies];
+  List<Object?> get props => [
+        currentPage,
+        totalPages,
+        movies,
+        genre,
+      ];
 }
