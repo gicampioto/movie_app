@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import '../../../../core/domain/entity/movie_entity.dart';
+import '../../../../../core/domain/entity/movie_entity.dart';
 
 abstract class HomeState extends Equatable {}
 

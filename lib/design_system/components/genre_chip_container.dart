@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../utils/genre_list.dart';
 import '../widgets/genre_chip.dart';
 
-class GenresContainer extends StatelessWidget {
-  const GenresContainer(
+class GenreChipContainer extends StatelessWidget {
+  const GenreChipContainer(
     this.genreIds, {
     super.key,
     this.middle = false,
@@ -23,7 +23,7 @@ class GenresContainer extends StatelessWidget {
 
     for (var genre in genreIds) {
       if (i < amount) {
-        chips.add(GenreChip(genreList[genre]));
+        chips.add(GenreChip(genresName[genre.toString()]));
         chips.add(const SizedBox(width: 3));
       }
       i++;

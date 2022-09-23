@@ -5,7 +5,7 @@ abstract class HomeEvent extends Equatable {}
 class HomeRequestMovies extends HomeEvent {
   HomeRequestMovies(this.genre);
 
-  final String genre;
+  final String? genre;
 
   @override
   List<Object?> get props => [genre];

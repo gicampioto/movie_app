@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app/design_system/components/genres_container.dart';
+import 'package:movie_app/design_system/components/genre_chip_container.dart';
 
 import '../../../../core/domain/entity/movie_entity.dart';
 import '../../../../design_system/utils/sizes.dart';
@@ -52,7 +52,7 @@ class PopMovieCard extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
               ),
-              Center(child: GenresContainer(movie.genreIDs, middle: true)),
+              Center(child: GenreChipContainer(movie.genreIDs, middle: true)),
               RateBar(movie.rate ?? 0),
             ],
           ),

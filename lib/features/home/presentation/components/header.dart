@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/design_system/widgets/icon_btn.dart';
+import 'package:movie_app/features/home/presentation/bloc/genre/genre_bloc.dart';
 
 import '../../../../design_system/utils/style.dart';
 import '../../../../design_system/utils/sizes.dart';
 
 class HomeHeader extends StatelessWidget {
-  const HomeHeader(this.constraints, {super.key, this.genre});
+  const HomeHeader(
+    this.constraints, {
+    super.key,
+    this.genre,
+    required this.bloc,
+  });
 
   final BoxConstraints constraints;
   final String? genre;
+  final GenreBloc bloc;
 
   @override
   Widget build(BuildContext context) {
@@ -43,9 +51,9 @@ class HomeHeader extends StatelessWidget {
               children: [
                 const Text('Genêro: ', style: TextStyles.title),
                 title,
-                const Icon(
-                  Icons.arrow_drop_down,
-                  color: Colors.white,
+                IconBtn(
+                  tap: () => bloc.add(GenreShowContainer()),
+                  icon: Icons.arrow_drop_down,
                   size: 30,
                 ),
               ],

@@ -28,6 +28,13 @@ class TextStyles {
     fontSize: FontSizes.barTitle,
     color: textColor,
   );
+
+  static const TextStyle genreTextBtn = TextStyle(
+    fontSize: FontSizes.barTitle,
+    color: textColor,
+    fontWeight: FontWeight.bold,
+    letterSpacing: 1.1,
+  );
 }
 
 class AppColors {
