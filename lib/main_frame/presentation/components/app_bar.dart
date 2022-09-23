@@ -28,19 +28,25 @@ AppBar appBar(MainFrameBloc bloc) {
         }
 
         return const Text(
-          'Filminhos',
+          'Movie App',
           style: TextStyles.barTitle,
         );
       },
     ),
   );
 
-  const Widget themeBtn = IconBtn(
-    icon: Icons.sunny,
-  );
-
-  const Widget logo = IconBtn(
-    icon: Icons.videocam,
+  Widget logo = BlocBuilder<MainFrameBloc, MainFrameState>(
+    builder: (context, state) {
+      if (state is MFMovieViewState) {
+        return IconBtn(
+          tap: () => context.read<MainFrameBloc>().add(MFTapHomeEvent()),
+          icon: Icons.arrow_back,
+        );
+      }
+      return const IconBtn(
+        icon: Icons.videocam,
+      );
+    },
   );
 
   return AppBar(
@@ -52,8 +58,6 @@ AppBar appBar(MainFrameBloc bloc) {
       padding,
       title,
       const Spacer(),
-      themeBtn,
-      padding,
     ],
   );
 }

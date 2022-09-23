@@ -19,7 +19,7 @@ class GenreTextBtn extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           bloc.add(GenreHideContainer());
-          context.read<HomeBloc>().add(HomeRequestMovies(genresId[title]));
+          context.read<HomeBloc>().add(HomeRequestMovies(genresId[title], 1));
         },
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: AppSizes.padding),

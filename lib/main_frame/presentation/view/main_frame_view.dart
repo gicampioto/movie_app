@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:movie_app/features/popular/presentation/view/popular_view.dart';
 
+import '../../../design_system/utils/style.dart';
 import '../../../features/home/presentation/view/home_view.dart';
 import '../../../features/movie/presentation/view/movie_view.dart';
 import '../components/app_bar.dart';
@@ -48,9 +49,11 @@ class _MainFrameViewState extends State<MainFrameView> {
             }
 
             if (state is MFFavoriteViewState) {
-              return Container(
-                color: Colors.amber,
-                child: const Center(child: Text('favorite')),
+              return const Center(
+                child: Text(
+                  'Em breve',
+                  style: TextStyles.barTitle,
+                ),
               );
             }
 

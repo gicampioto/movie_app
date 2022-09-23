@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'main_frame/presentation/view/main_frame_view.dart';
 import 'core/utils/inject.dart';
 
 void main() async {
   await Inject.init();
-
+  await dotenv.load(fileName: '.env');
   runApp(const MyApp());
 }
 

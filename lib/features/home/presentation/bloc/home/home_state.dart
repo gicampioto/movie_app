@@ -31,7 +31,7 @@ class HomeDataFetchedState extends HomeState {
     required this.genre,
   });
 
-  final String currentPage;
+  final int currentPage;
   final int totalPages;
   final List<MovieEntity> movies;
   final String genre;

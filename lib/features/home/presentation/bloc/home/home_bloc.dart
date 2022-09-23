@@ -18,10 +18,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       try {
         var genre = event.genre ?? '18';
 
-        PageEntity page = await getMoviesByGenre(genre, 1);
+        PageEntity page = await getMoviesByGenre(genre, event.page);
 
         emit(HomeDataFetchedState(
-          currentPage: page.currentPage,
+          currentPage: event.page,
           totalPages: page.totalPages,
           movies: page.movies,
           genre: genre,

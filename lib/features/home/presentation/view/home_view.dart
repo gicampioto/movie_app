@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:movie_app/design_system/utils/genre_list.dart';
+import 'package:movie_app/features/home/presentation/components/page_count_container.dart';
 
 import '../bloc/genre/genre_bloc.dart';
 import '../components/search_genres_container.dart';
@@ -48,7 +49,7 @@ class _HomeViewState extends State<HomeView> {
             bloc: homeBloc,
             builder: (context, state) {
               if (state is HomeInitialState) {
-                homeBloc.add(HomeRequestMovies('18'));
+                homeBloc.add(HomeRequestMovies('18', 1));
               }
 
               if (state is HomeDataFetchedState) {
@@ -60,6 +61,11 @@ class _HomeViewState extends State<HomeView> {
                       constraints,
                       genre: genresName[state.genre],
                       bloc: genreBloc,
+                    ),
+                    PageCountContainer(
+                      currentPage: state.currentPage,
+                      totalPages: state.totalPages,
+                      genre: state.genre,
                     ),
                     BlocBuilder<GenreBloc, GenreState>(
                       bloc: genreBloc,
