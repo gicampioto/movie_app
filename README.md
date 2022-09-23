@@ -1,16 +1,22 @@
-# movie_app
+# Movie App
 
-A new Flutter project.
+Projeto de App de filmes.
 
-## Getting Started
+## Resumo
 
-This project is a starting point for a Flutter application.
+Esse projeto contêm 4 telas.
 
-A few resources to get you started if this is your first Flutter project:
+- Home: Onde filmes estão listados de acordo com genêro.
+- Popular: Os filmes mais populares da atualidade.
+- Movie: Onde tem um maior detalhamento de cada filme.
+- Favorite: Tela em processo de criação. (Ainda não concluida)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# API
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Foi usada a API the movie db.
+
+- Para mais informações sobre a documentação da API: https://www.themoviedb.org/documentation/api
+
+## 
+
+
