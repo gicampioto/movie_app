@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:movie_app/features/popular/presentation/view/popular_view.dart';
 
+import '../../../design_system/utils/sizes.dart';
 import '../../../design_system/utils/style.dart';
 import '../../../features/home/presentation/view/home_view.dart';
 import '../../../features/movie/presentation/view/movie_view.dart';
@@ -52,7 +53,10 @@ class _MainFrameViewState extends State<MainFrameView> {
               return const Center(
                 child: Text(
                   'Em breve',
-                  style: TextStyles.barTitle,
+                  style: TextStyle(
+                    fontSize: FontSizes.barTitle,
+                    color: AppColors.darkPink,
+                  ),
                 ),
               );
             }
